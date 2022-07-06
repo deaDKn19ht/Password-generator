@@ -12,8 +12,8 @@
     <div id="app">
     <h1>Генератор паролей</h1>
     <hr>
-   <!-- <input type="text" v-model="pass">-->
-   <h3>{{pass}}</h3>
+   <input type="text" v-model="pass" placeholder="">
+   
     <label>
         <input type="checkbox" 
         v-model="checkedLowerCase">a-z
@@ -25,7 +25,8 @@
     <label><input type="checkbox"
         v-model="checkedSymbol">Спецсимволы</label>
     <button @click="passGen">Сгенерировать</button>
-    <input type="number" v-model="passLength">
+    <label><input type="range" 
+    v-model="passLength" min="6" max="24">{{passLength}}</label>
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,8 +1,7 @@
 Vue.createApp({
     data() {
         return {
-            pass: '',
-            string: '',
+            pass: '',  
             checkedLowerCase: true,
             checkedUpperCase: false,
             checkedNumber: false,
@@ -11,18 +10,28 @@ Vue.createApp({
             upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             number: "0123456789",
             symbol: "!\"'@#$%^&*()_+~\\`|}{[]:;?><,./-=",    
-            passLength: 6,        
+            passLength: 8,        
         }
     },
     methods: {
         passGen(){
-            if(this.checkedLowerCase) this.string+= this.lowerCase
-            if(this.checkedUpperCase) this.string+= this.upperCase
-            if(this.checkedNumber) this.string+= this.number
-            if(this.checkedSymbol) this.string+= this.symbol
+            let string = ''
+            this.pass = ''
+            if(this.checkedLowerCase) {
+                string+= this.lowerCase
+            }
+            if(this.checkedUpperCase) {
+                string+= this.upperCase
+            }
+            if(this.checkedNumber) {
+                string+= this.number
+            }
+            if(this.checkedSymbol) {
+                string+= this.symbol
+            }
 
             for(let i = 0; i < this.passLength; i++) {
-                this.pass += this.string.charAt(Math.floor(Math.random()*this.string.length))
+                this.pass += string.charAt(Math.floor(Math.random()*string.length))
             }            
         }
         
