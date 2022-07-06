@@ -23,7 +23,7 @@ Vue.createApp({
 
             for(let i = 0; i < this.passLength; i++) {
                 this.pass += this.string.charAt(Math.floor(Math.random()*this.string.length))
-            }
+            }            
         }
         
     },    
