@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    <h1>Генератор паролей</h1>
+    <hr>
+    <input type="text" v-model="pass">
+    <label>
+        <input type="checkbox" 
+        v-model="checkedLowerCase">a-z
+    </label>
+    <label><input type="checkbox"
+        v-model="checkedUpperCase">A-Z</label>
+    <label><input type="checkbox"
+        v-model="checkedNumber">0-9</label>
+    <label><input type="checkbox"
+        v-model="checkedSymbol">Спецсимволы</label>
+    <button @click="passGen">Сгенерировать</button>
+    <input type="number" v-model="passLength">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
