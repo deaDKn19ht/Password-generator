@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,46 @@
     <script src="https://unpkg.com/vue@next"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
-    <h1>Генератор паролей</h1>
-    <hr>
-   <input type="text" v-model="pass" placeholder="">
-   
-    <label>
-        <input type="checkbox" 
-        v-model="checkedLowerCase">a-z
-    </label>
-    <label><input type="checkbox"
-        v-model="checkedUpperCase">A-Z</label>
-    <label><input type="checkbox"
-        v-model="checkedNumber">0-9</label>
-    <label><input type="checkbox"
-        v-model="checkedSymbol">Спецсимволы</label>
-    <button @click="passGen">Сгенерировать</button>
-    <label><input type="range" 
-    v-model="passLength" min="6" max="24">{{passLength}}</label>
+        <div class="card">
+            <h1>Генератор паролей</h1>                     
+            <input type="text" v-model="pass" placeholder="" class="card__input_text">
+            <button @click="passGen">&#11118;</button>
+            <div class="card__input">
+            <label>
+                <input type="range" 
+                v-model="passLength" 
+                min="6" max="16"
+                class="card__input_range"> {{passLength}}
+            </label>
+            </div>
+            <div class="card__input_checkbox">
+            <label>
+                <input type="checkbox" 
+                v-model="checkedLowerCase"
+                >a-z
+            </label>
+            <label>
+                <input type="checkbox" 
+                v-model="checkedUpperCase"
+                >A-Z
+            </label>
+            <label>
+                <input type="checkbox" 
+                v-model="checkedNumber"
+                >0-9
+            </label>
+            <label>
+                <input type="checkbox" 
+                v-model="checkedSymbol"
+                >Спецсимволы
+            </label>
+            </div>            
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
